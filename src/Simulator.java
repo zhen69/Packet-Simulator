@@ -128,6 +128,10 @@ public class Simulator{
             System.out.println("No packets arrived.");
     }
 
+    /**
+     * Dispatcher sends all arrived packets to an available Router. If all Routers are full, then the
+     * remaining packets will be dropped.
+     */
     private void sendToRouters() throws EmptyBufferException {
         while(!dispatcher.isEmpty()) {
             Packet packetSent, packetDropped;
@@ -146,12 +150,28 @@ public class Simulator{
         }
     }
 
+    /**
+     * Records any packet that is ready to be sent to the destination.
+     *
+     * @param recordQueue
+     *      A temporary Router that records all packets that are ready to be sent.
+     */
     private void recordPackets(Router recordQueue){
         for(Router router : routers)
             if(!(router.isEmpty()) && router.peek().getTimeToDest() == 0)
                 recordQueue.enqueue(router.peek());
     }
 
+    /**
+     * Sent all packets that are ready to destination. If the number of packets being sent has reach the size of bandWidth,
+     * any remaining packets will stay in the router and wait for the next simulation unit.
+     *
+     * @param packetsToBeSent
+     *      A temporary Router that keeps tracks of which packets should be sent to destination.
+     *
+     * @param simulationUnit
+     *      Current simulation unit.
+     */
     private void sendPacketToDestination(Router packetsToBeSent, int simulationUnit) throws EmptyBufferException {
         int count = 0;
         while(!(packetsToBeSent.isEmpty()) && count < bandWidth){
@@ -170,6 +190,10 @@ public class Simulator{
         }
     }
 
+    /**
+     * Display information of the intermediate Routers and decrement the time to destination of all packets
+     * that are in the front.
+     */
     private void packetsInRouters() {
         for(int i = 1; i <= routers.size(); i++) {
             System.out.println("R" + i + ": " + routers.get(i - 1));
@@ -251,6 +275,12 @@ public class Simulator{
         return prob;
     }
 
+    /**
+     * Returns a Simulator based on user input.
+     *
+     * @return
+     *      A Simulator based on user input.
+     */
     private static Simulator generateSimulator(){
         int numIntRouters, minPacketSize, maxPacketSize, bandwidth, duration;
         double probability;
@@ -266,6 +296,13 @@ public class Simulator{
         return new Simulator(numIntRouters, probability, minPacketSize, maxPacketSize, bandwidth, duration);
     }
 
+    /**
+     * Activates the Simulator and display appropriate statistics.
+     *
+     * @param simulator
+     *      Simulator being activate.
+     *
+     */
     private static void simulate(Simulator simulator) throws EmptyBufferException {
         double average = simulator.simulate();
         System.out.println("\n\nSimulation ending...");
@@ -275,9 +312,13 @@ public class Simulator{
         System.out.println("Total packets dropped: " + simulator.getPacketsDropped());
     }
 
+    /**
+     * Ask user if he/she want to create another simulation. If not, terminates the program.
+     */
     private static void exit(){
         System.out.print("\nDo you want to try another simulation? [y|n]: ");
         String cont = input.nextLine().toLowerCase().trim();
+
         while(!(cont.equals("y") || cont.equals("n"))) {
             System.out.print("\nPlease enter only y or n: ");
             cont = input.nextLine().toLowerCase().trim();
