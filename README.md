@@ -4,5 +4,3 @@ Implemented a simple network that simulates the arrival of packets based on a sp
 Language Used: Java
 
 Concepts: Object Oriented-Programming, basic understanding of network, and Data Structure (Queue).
-
-Restrictions: Despite the Scanner class, no API classes are allowed when implementing this project.
