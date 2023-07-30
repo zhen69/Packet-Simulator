@@ -8,7 +8,7 @@ public class Packet {
 
     /*
     Keep tracks of how many packets are created.
-    Value use to assign an ID to a newly created packet
+    Value used to assign an ID to a newly created packet
      */
     private static int packetCount = 0;
     int id, packetSize, timeArrived, timeToDest;

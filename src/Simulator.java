@@ -1,5 +1,5 @@
 /**
- * The Simulator class implement a main method that ask for user inputs and
+ * The Simulator class implement a main method that asks for user inputs and
  * output the process that indicates how packets are being sent through the network.
  *
  * @author Zhen Wei Liao
@@ -44,7 +44,7 @@ public class Simulator{
      * 		Maximum packet size.
      *
      * @param bandwidth
-     * 		Maximum number of Packet can be received by destination at a given simulation unit.
+     * 		Destination can receive a maximum of <code>bandwidth</code> Packets at a given simulation unit.
      *
      * @param duration
      * 		Number of simulation units.
@@ -110,7 +110,7 @@ public class Simulator{
      * Generates Packets based on arrival probability and records all packets that arrive at dispatcher.
      *
      * @param timeArrived
-     *      Time in which the packets arrived at dispatcher.
+     *      Time in which the packets arrived at the dispatcher.
      */
     private void packetArriving(int timeArrived){
         for(int i = 1; i <= MAX_PACKETS; i++){
@@ -163,7 +163,8 @@ public class Simulator{
     }
 
     /**
-     * Sent all packets that are ready to destination. If the number of packets being sent has reach the size of bandWidth,
+     * Sent all packets that are ready to destination.
+     * If the number of packets being sent has reached the size of bandWidth,
      * any remaining packets will stay in the router and wait for the next simulation unit.
      *
      * @param packetsToBeSent
@@ -260,7 +261,7 @@ public class Simulator{
     }
 
     /**
-     * Checks if the user enter a number or not and if the entered number is in the range [0, 1]
+     * Checks if the user enters a number or not and if the entered number is in the range [0, 1]
      *
      * @return User input as a double.
      * @throws IllegalArgumentException when user input is out of range.
@@ -313,7 +314,7 @@ public class Simulator{
     }
 
     /**
-     * Ask user if he/she want to create another simulation. If not, terminates the program.
+     * Ask the user if he/she want to create another simulation. If not, terminate the program.
      */
     private static void exit(){
         System.out.print("\nDo you want to try another simulation? [y|n]: ");
@@ -332,9 +333,9 @@ public class Simulator{
     }
 
     /**
-     * The main method will ask for user input and create a Simulator object based on the
-     * given information. Later, it call the simulate() method on the Simulator object
-     * and print out the total service time, total packets served, average service time
+     * The main method will ask for user input and create a Simulator object based on the given information.
+     * Later it calls the simulate() method on the Simulator object
+     * and prints out the total service time, total packets served, average service time
      * per packet, and total packets that are dropped during the simulation.
      * */
     public static void main(String[] args) {
@@ -351,7 +352,7 @@ public class Simulator{
             } catch(NumberFormatException e){
                 System.out.println("Error: Please enter a number.\n");
             } catch(EmptyBufferException | IllegalArgumentException e) {
-                System.out.println(e);
+                System.out.println(e.getMessage());
             }
         }
     }
