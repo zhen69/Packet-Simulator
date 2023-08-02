@@ -18,7 +18,7 @@ Implemented a simple network that simulates the arrival of packets based on a sp
   </ul>
 </ul>
 
-<h4>Installing</h4>
+<h3>Installing</h3>
 Visit the src directory to see all the required Java files. To run the program, individuals must download those files and put them in the same directory.
 
 <h3>Executing program</h3>
