@@ -1,7 +1,7 @@
-# Packet Simulator
-Created a Simulator that simulates a simple network.
+# Packet simulator
+Created a simulator that simulates a simple network.
 <h2>Description</h2>
-Implemented a simple network that simulates the arrival of packets based on a specific probability, determines which routers receive them, and indicates whether/when they reach their destination. For this simulator to function properly, the user must input information such as the packet arrival probability, the number of routers, the maximum size of each router, the maximum number of packets that could arrive at the dispatcher in one simulation unit, the minimum/maximum packet size, and the duration of the simulator.
+Implemented a simple network that simulates the arrival of packets based on a specific probability, determines which routers receive them, and indicates whether/when they reach their destination. For this simulator to function correctly, the user must input information such as the packet arrival probability, the number of routers, the maximum size of each router, the maximum number of packets that could arrive at the dispatcher in one simulation unit, the minimum/maximum packet size, and the duration of the simulator.
 
 <h2>Get Started</h2>
 <h3>Dependencies</h3>
@@ -17,6 +17,9 @@ Implemented a simple network that simulates the arrival of packets based on a sp
     <li><a href="https://replit.com/~">Repl.it</a></li>
   </ul>
 </ul>
+
+<h4>Installing</h4>
+Visit the src directory to see all the required Java files. To run the program, individuals must download those files and put them in the same directory.
 
 <h3>Executing program</h3>
 Run directly in IDEs
@@ -44,7 +47,7 @@ Do the following in the terminal (the following example is run in the Windows Po
   <li>Compile the file you want to execute. Let's call this file "RunMe.java"</li>
   <code>C:\Users\anon\JavaProgram> javac RunMe.java</code>
   <br>
-  This will create the class file "RunMe.class"
+  This will create the class file "RunMe.class."
   <br><br>
   <li>Run the program</li>
   <code>C:\Users\anon\JavaProgram> java RunMe.java</code>
