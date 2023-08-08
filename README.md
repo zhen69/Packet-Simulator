@@ -7,10 +7,10 @@ Implemented a simple network that simulates the arrival of packets based on a sp
 <h3>Dependencies</h3>
 <ul>
   <li><a href="https://www.oracle.com/java/technologies/downloads/">Java JDK 15 or Higher</a></li>
-  <li>Text Editor or IDEs.</li>
+  <li>Text Editor or IDEs</li>
   <h4>Recommend:</h4>
   <ul>
-    <li>Notepad (Worst Case).</li>
+    <li>Notepad (Worst Case)</li>
     <li><a href="https://www.eclipse.org/downloads/">Eclipse</a></li>
     <li><a href="https://www.jetbrains.com/idea/download/?fromIDE=&section=windows">IntelliJ IDEA</a></li>
     <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
