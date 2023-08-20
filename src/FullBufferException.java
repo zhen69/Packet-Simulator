@@ -1,5 +1,6 @@
 /**
  * The FullBufferException class inherits all properties and behaviors of the Exception class.
+ * This exception is thrown when all routers in the network are full.
  *
  * @author Zhen Wei Liao
  **/
