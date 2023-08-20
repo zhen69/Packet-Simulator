@@ -1,6 +1,5 @@
 /**
- * The FullBufferException class inherit all properties and behaviors
- * from the Exception class.
+ * The FullBufferException class inherits all properties and behaviors of the Exception class.
  *
  * @author Zhen Wei Liao
  **/
