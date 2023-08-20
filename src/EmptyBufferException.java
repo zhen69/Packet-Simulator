@@ -1,5 +1,6 @@
 /**
  * The EmptyBufferException class inherits all properties and behaviors of the Exception class.
+ * This exception is thrown when attempting to remove packets from an empty router.
  *
  * @author Zhen Wei Liao
  **/
